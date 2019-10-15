@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Download from YouTube with no hassle</title>
+
+    {% load static %}
+    <link href="{% static "bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "tube.css" %}" rel="stylesheet">
+    <script src="{% static "jquery-3.4.1.min.js" %}"></script>
+    <script src="{% static "scripts.js" %}"></script>
+</head>
+
+<body class="text-center">
+<form class="form-download" novalidate="novalidate">
+    {% csrf_token %}
+    <div class="step1">
+        <img class="mb-4 logo" src={% static "logo.png" %} alt="" >
+        <h1 class="h3 mb-3 font-weight-normal">Paste</h1>
+
+        <input type="text" name="YouTubeURL" id="youtube-url" class="form-control"
+               oninvalid="this.setCustomValidity('Place your URL here')"
+               placeholder="YouTube URL">
+        <h1 class="h3 mb-3 font-weight-normal">and Click</h1>
+        <button class="btn btn-lg btn-primary btn-block top-buffer" type="submit" id="submit-btn">The button</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+    </div>
+
+    <div class="step2">
+        <h1 class="h3 mb-3 font-weight-normal">Bleep Bloop, I am a Robot</h1>
+        <div class="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="step3">
+        <h1 class="h3 mb-3 font-weight-normal">Your video is on the way!</h1>
+        <button class="btn btn-lg btn-primary btn-block top-buffer" id="load-more-btn">Download MORE!</button>
+    </div>
+
+</form>
+</body>
+</html>

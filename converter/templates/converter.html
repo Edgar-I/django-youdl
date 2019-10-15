@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block upload %}
+
+    <div class="converter">
+        <div id="stepUpload" style="">
+            <div class="converter-section">
+                <div class="container">
+                    <div class="container">
+                        <div class="converter-section-1-1">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="converter-section-1-title">
+                                        <h1>Скачайте ваше youtube видео в пару кликов</h1>
+                                    </div>
+                                    <div id="upposExpert" class="converter-section-1-1-file-upload">
+                                        <div class="ajax-upload-dragdrop" style="vertical-align:top;">
+
+
+                                            <form method="POST" action="/convert/" enctype="multipart/form-data"
+                                                  id="uploadForm">
+
+                                                <div class="row">
+
+
+                                                    <input type="text" id="youtube-url" name="youtube-url"
+                                                           placeholder="YouTube URL" required>
+                                                    <div class="ajax-file-upload">
+                                                        Скачать
+                                                        {% csrf_token %}
+                                                        {# <input type="file" id="file" class="form-file-input" name="video">#}
+                                                    </div>
+                                                      <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                                            type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
+                                                        Small button
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        ...
+                                                    </div>
+                                                </div>
+
+
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+{% endblock %}
